@@ -1,28 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
-
+/* Importation de la police Inter depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+/* Début du style global */
 :root{
     --white:#FFFFFF;
-    --dark:#000000;
+    --black:#000000;
     --yellow:#EEA302;
     --orange:#E13B25;
     --green:#80D8DA;
     --gray:#D9D9D9;
-    --font-inter: "Inter", sans-serif;
+    --font-raleway: "Raleway", sans-serif;
+    --font-playfair: "Playfair Display", serif;
+    --font-montserrat: "Montserrat", sans-serif;
 }
 
+/* Reset des marges et paddings, et box-sizing pour tous les éléments */
 *{
     box-sizing: border-box;
 }
 
 body {
     background-color: var(--white);
-    font-family: var(--font-inter);;
-    color: var(--dark);
+    font-family: var(--font-raleway);
+    color: var(--black);
     font-size: 1rem;
     margin: 0;
     padding: 0;
 }
 
+/* Styles globales... */
 a{
     text-decoration: none;
     color: var(--dark);
@@ -32,27 +37,26 @@ li{
     list-style: none;
 }
 
-h1{
-    font-size: 1.5em;
+.bold{
+    font-weight: bold;
 }
+/* Fin du style global */
 
-#main-header{
-    padding: 10px 0 0 0;
-}
 
+/* Début de header*/
 .navbar{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 1em;
+    gap: 1.5em;
 }
 
 .navbar h1{
-    font-size: 1.5em;
-    font-weight: bold;
-    text-decoration: none;
+    font-size: 2em;
+    font-family: "Playfair Display", serif;
 }
+
 
 .nav-list{
     display: flex;
@@ -62,14 +66,10 @@ h1{
     margin: 0;
 }
 
-.nav-item{
-    font-weight:regular;
-    font-size: 1em;
-}
 
 .nav-item::after{
     content: "|";
-    padding: 0 1em;
+    padding: 0 1.5em;
 }
 
 .nav-item:last-child::after{
@@ -77,36 +77,81 @@ h1{
     padding: 0;
 }
 
-/*Fin de navbar*/
+.nav-item a:hover{
+    text-decoration: underline var(--black) 2px;
+    color: var(--orange);
+    transition: all 0.5s ease;
 
+}
+/*Fin de header*/
+
+
+/*Début de main*/
 #main-content{
-    padding-top : 4em;
+    padding: 5em 2em 2em 2em;
 }
 
-.portrait{
-    width: 230px;
-    border-radius: 50%;
+.intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.intro img{
+    width: 300px;
     overflow: hidden;
     margin: 0 auto;
+    border: 6px solid var(--gray);
+}
+
+.intro h2{
+    margin: 0;
+    text-align: center;
+    font-family: var(--font-montserrat), serif;
 }
 
 .intro-text{
-    text-align: center;
-    margin: 2em 0;
-    padding: 0 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+
+    width: 100%;
+    margin: 0 auto;
+    border-top: 1px solid var(--gray);
+}
+
+.intro-text p{
+    margin: 0;
 }
 
 .a-propos {
-    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2em;
+}
+
+.a-propos h3{
+    font-family: var(--font-montserrat), serif;
+    text-align:center;
+    text-decoration: underline var(--gray) 1px;
+    margin: 0;
+    padding-bottom: 1em;
+    
 }
 
 .a-propos p{
     text-align: justify;
     line-height: 1.5em;
+    margin: 0;
 }
 
+
+
 .buttons{
-    margin: 2em 0;
     display: flex;
     justify-content: center;
     gap: 1em;
@@ -114,12 +159,11 @@ h1{
 
 .buttons .btn{
     padding: 1em 0;
-    border-radius: 20px;
-    border: none;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-align: center;
-    width: 100px;
+    width: 90px;
 }
 
 .buttons .btn-jaune{
@@ -137,369 +181,57 @@ h1{
     color: var(--white);
 }
 
+.buttons .btn:hover{
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.invitation{
+    text-align: center;
+    font-size: 1em;
+}
+/*Fin de main*/
+
+/*Début de footer*/
 #main-footer{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin: 4em auto;
-    border-top: 1px solid var(--gray);
-    text-align: center;
-    font-size: 0.9em;
-    color: var(--dark);
-}
-
-.bold{
-    font-weight: bold;
-}
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-
-#mainHeader{
-    padding: 2em 4em;
-    font-size: 16px;
-}
-
-.mainNav{
-    display: flex;
     justify-content: space-between;
-    font-weight: normal;
-}
-
-.logo{
-    display: flex;
-    align-items: center;
-}
-
-.navLinks{
-    display: flex;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
-
-.navLinks li{
-    list-style: none;
-}   
-
-.navLinks li::after{
-    content: ".";
-    padding: 0 1em;
-}
-
-.navLinks li:last-child::after{
-    content: "";
-}
-
-.ctaButtons{
-    display: flex;
-    align-items: center;
-}
-
-.ctaBtn{
-    border: 1px solid var(--dark);
-    border-radius: 20px;
-    padding: 1em 2em;
-}
-
-.ctaLogin {
-    border-left: 2px solid var(--gray);
-    padding: 1em;
-}
-
-
-.ctaText{
-    font-weight: bold;
-}
-
-.ctaGetItNow:hover {
-    background-color:var(--dark);
-    transition: background-color 2s;
-    color: var(--white)
-}
-
-.hamburger-button{
-    display: none;
-}
-
-/*Fin de header*/
-
-
-/*Début de main*/
-
-/*Section left*/
-
-#mainContent{
-    background-color: var(--pink);
-    border-radius: 20px;
-    padding: 4em 2em;
-    margin: 0 2em;
-}
-
-.heroSection{
-    display: flex;
-    justify-content: space-between;
-    max-width: 100%;
-}
-
-.heroSectionLeft{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 40%;
-}
-
-.heroSectionLeftHeading{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap:0;
-    border-bottom: 1px solid var(--pink-underline);
-}
-
-.heroSectionLeftHeading h1{
-    font-size: 10em;
-    font-weight: 600;
-    margin: 0;
-}
-
-.subHeadingContainer, .heroStatsTextsAndImage{
-    display: flex;
-    align-items: center
-
-}
-
-.subHeadingContainerFloatingText{
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-    font-size: 0.8em;
-}
-
-.sub-icon{
-    width: 40px;
-}
-
-.heroStats{
-    display: flex;
-    flex-direction: column;
-    gap: 2.5em;
-    border-bottom: 1px solid var(--pink-underline);
-    padding: 1.5em 0;
-}
-
-.heroStats p{
-    margin: 0;
-    width: 73%;
-}
-
-.heroButtons{
-    display: flex;
     align-items: center;
     gap: 2em;
-    margin-top: 2em;
-}
-
-.ctaDownload{
-    background-color: var(--dark);
-    color: var(--white);
-}
-
-.ctaPricing{
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-}
-
-/*Section Right*/
-
-.heroSectionRight{
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.heroSectionRightShopping{
-    position: absolute;
-    top: 9%;
-    left: -22%;
-}
-
-.heroSectionImageShopping{
-    background-color: var(--white);
-    border-radius: 20px;
-    padding: 1em 1em;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    width: 220px;
-    font-size: 0.8em;
-    margin: 0 2em 0 4em;
-}
-
-.heroSectionImageShopping p{    
-    margin: 0;
-}
-
-.heroSectionImageShopping p:nth-last-child(2){
-    font-weight:600;
-    font-size: 1em;  
-}
-
-.heroSectionImageShoppingImg{
-    background: url('./images/orange\ picture.png') no-repeat center center / cover;
-    width: 100%;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    border: 1px solid var(--gray);
-}
-
-.heroSectionImageShopping a{
-    border-radius: 20px;
-    border: none;
-    padding: 0.5em 1em;
-    background-color: var(--gray);
+    width: 80%;
+    margin: 0 auto;
+    padding: 4em 0 2em 0;
+    border-top: 1px solid var(--gray);
     text-align: center;
-    font-weight: 600;
 }
 
-.heroSectionSmallImageShopping{
+address{
+    font-style: normal;
+    line-height: 1.5em;
     display: flex;
     flex-direction: column;
-    align-items:flex-end;
-    gap: 0.5em;
-    font-size: 0.8em;
-    margin: 2em 0 0 2em;
-}
-
-.smallImagesContainer{
-    display: flex; 
     align-items: center;
-    gap: 0.5em; 
-    justify-content: flex-end;
 }
 
-.smallImage{
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-}
-
-.smallImage1{
-    background: url('./images/hairStyle1.png') no-repeat center center / cover;
-}
-
-.smallImage2{
-    background: url('./images/hairStyle.png') no-repeat center center / cover;
-}
-
-.smallImageBars{
-    display: flex; 
-    flex-direction: column; 
-    gap: 0.2em;
-}
-
-.heroSectionRightLiveShopping{
-    background :url('./images/freepik__the-style-is-candid-image-photography-with-natural__27425.png') no-repeat center center / cover;
-    width: 300px;
-    height: 400px;
+.social-icons{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;  
-    border-radius: 20px;
-    padding: 1em 1em;
-    color: var(--white);
-}
-
-.heroSectionRightLiveShoppingHeader{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0;
-}
-
-.heroSectionRightLiveShoppingHeader p{
-    margin: 0;
-    color: var(--white);
-    font-weight: bold;
-}
-
-.liveAndViews{
-    margin:0;
-    display: flex;
-    gap: 0;
-    font-family: var(--font-inter);
-    font-size: 0.8em;
-}
-
-.live{
-    background-color: var(--red);
-    padding: 0.2em 0.5em;
-    border-radius: 5px 0 0 5px;
-    
-}
-
-.views{
-    background-color: var(--white);
-    color: var(--dark);
-    padding: 0.2em 0.5em;
-    border-radius: 0 5px 5px 0;
-}
-
-.heroSectionRightLiveShoppingInputChat{
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 1em;
 }
-
-.heroSectionRightLiveShoppingInputChat input{
-    width: 90%;
-    border-radius: 20px;
-    border: none;
-    padding: 0.5em;
+.social-icons a img{
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
 }
 
-.play-button{
-    width: 50px;
-    display: flex;
-    align-self: center;
+.social-icons a img:hover{
+    transform: scale(1.2);
 }
 
-.heroSectionRightLiveStats{
-    position: absolute;
+.copyright {
+    font-size: 0.8em;
+    color: var(--black);
 }
-
-#main-footer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 4em;
-    padding: 1em 4em;
-}
-
-
-
-
-
-
+/*Fin de footer*/
