@@ -1,5 +1,5 @@
 /* Importation de la police Inter depuis Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 /* Début du style global */
 :root{
     --white:#FFFFFF;
@@ -8,9 +8,7 @@
     --orange:#E13B25;
     --green:#80D8DA;
     --gray:#D9D9D9;
-    --font-raleway: "Raleway", sans-serif;
-    --font-playfair: "Playfair Display", serif;
-    --font-montserrat: "Montserrat", sans-serif;
+    --font-inter: 'Inter', sans-serif;
 }
 
 /* Reset des marges et paddings, et box-sizing pour tous les éléments */
@@ -19,9 +17,7 @@
 }
 
 body {
-    background-color: var(--white);
-    font-family: var(--font-raleway);
-    color: var(--black);
+    font-family: var(--font-inter);
     font-size: 1rem;
     margin: 0;
     padding: 0;
@@ -49,14 +45,13 @@ li{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 1.5em;
+    gap: 1em;
+    padding-top: 1em;
 }
 
 .navbar h1{
-    font-size: 2em;
-    font-family: "Playfair Display", serif;
+    font-size: 1.5em;
 }
-
 
 .nav-list{
     display: flex;
@@ -88,7 +83,7 @@ li{
 
 /*Début de main*/
 #main-content{
-    padding: 5em 2em 2em 2em;
+    padding: 5em 2.5em 2em 2.5em;
 }
 
 .intro{
@@ -101,15 +96,16 @@ li{
 
 .intro img{
     width: 300px;
+    height: 300px;
+    object-fit: cover;
     overflow: hidden;
     margin: 0 auto;
-    border: 6px solid var(--gray);
+    border: 20px solid var(--gray);
 }
 
 .intro h2{
     margin: 0;
-    text-align: center;
-    font-family: var(--font-montserrat), serif;
+    font-size: 2.5em;
 }
 
 .intro-text{
@@ -118,29 +114,22 @@ li{
     justify-content: center;
     align-items: center;
     gap: 1.5em;
-
     width: 100%;
     margin: 0 auto;
     border-top: 1px solid var(--gray);
 }
 
-.intro-text p{
-    margin: 0;
-}
-
 .a-propos {
     display: flex;
     flex-direction: column;
-    padding-top: 2em;
+    gap: 1em;
+    padding-top: O;
 }
 
 .a-propos h3{
-    font-family: var(--font-montserrat), serif;
     text-align:center;
-    text-decoration: underline var(--gray) 1px;
+    text-decoration: underline var(--black) 1px;
     margin: 0;
-    padding-bottom: 1em;
-    
 }
 
 .a-propos p{
@@ -148,8 +137,6 @@ li{
     line-height: 1.5em;
     margin: 0;
 }
-
-
 
 .buttons{
     display: flex;
@@ -185,11 +172,6 @@ li{
     opacity: 0.8;
     transform: scale(1.05);
 }
-
-.invitation{
-    text-align: center;
-    font-size: 1em;
-}
 /*Fin de main*/
 
 /*Début de footer*/
@@ -198,21 +180,13 @@ li{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 2em;
-    width: 80%;
+    gap: 1.5em;
     margin: 0 auto;
-    padding: 4em 0 2em 0;
+    padding: 4em 0 1em 0;
     border-top: 1px solid var(--gray);
     text-align: center;
 }
 
-address{
-    font-style: normal;
-    line-height: 1.5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .social-icons{
     display: flex;
@@ -221,8 +195,6 @@ address{
     gap: 1em;
 }
 .social-icons a img{
-    width: 30px;
-    height: 30px;
     transition: transform 0.3s ease;
 }
 
@@ -232,6 +204,96 @@ address{
 
 .copyright {
     font-size: 0.8em;
-    color: var(--black);
 }
 /*Fin de footer*/
+
+/*media queries*/
+@media (min-width: 768px) {
+    
+    .navbar{
+        flex-direction: row;
+        padding: 1em 2em 0 2em;
+        border-bottom: 0.5px solid var(--gray);
+        background-color: ;
+    }
+
+    .intro{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5em;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .intro img{
+        width: 380px;
+        height: 380px;
+        border-radius: 50%;
+        border: none;
+
+    }
+
+    .intro-text{
+        align-items:flex-start;
+        border-top: none;
+        gap: 1.5em;
+    }
+
+    .intro-text h2{      
+        text-align: left;
+        font-size: 3em;
+    }
+
+    .underline{
+        text-decoration: none;
+    }
+    .a-propos{
+        padding: 0;
+    }
+    .a-propos h3{
+        text-align: left;
+        padding-bottom: 0.5em;
+        font-size: 2em;
+        text-decoration: none;
+    }
+
+    #main-footer{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 4em auto;
+        padding: 0;
+        gap: 1em;
+        width: 90%;
+        border-top: 1px solid var(--gray);
+    }
+
+    #main-footer p{
+        text-align: left;
+    }
+
+    .copyright{
+        text-align: right;
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .intro img{
+        width: 500px;
+        height: 400px;
+    }
+
+    .intro-text h2{
+        font-size: 4em;
+    }
+
+    .a-propos h3{
+        font-size: 2.5em;
+    }
+    .a-propos p{
+        font-size: 1.2em;
+    }
+    
+}
