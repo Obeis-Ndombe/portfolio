@@ -21,6 +21,7 @@ body {
     font-size: 1rem;
     margin: 0;
     padding: 0;
+    line-height: 177.5%;
 }
 
 /* Styles globales... */
@@ -29,7 +30,7 @@ a{
     color: var(--dark);
 }
 
-li{
+.nav-list li{
     list-style: none;
 }
 
@@ -296,4 +297,33 @@ li{
         font-size: 1.2em;
     }
     
+}
+
+/*Style du fichier cv.html*/
+
+.cv h2{
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    text-decoration: underline var(--black) 2px;
+}
+
+.padding-bottom{
+    padding-bottom: 2em;
+    border-bottom: 1px solid var(--gray);
+}
+
+.padding-top{
+    padding-top: 2em;
+}
+
+/* Numérotation automatique des h3 dans les sections du CV */
+.cv section h3::before {
+    counter-increment: section-h3;
+    content: counter(section-h3) ". ";
+}
+
+/* Initialiser le compteur au début du main */
+.cv {
+    counter-reset: section-h3;
 }
