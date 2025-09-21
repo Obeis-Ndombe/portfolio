@@ -208,6 +208,95 @@ a{
 }
 /*Fin de footer*/
 
+/*Style du fichier cv.html*/
+
+.cv h2{
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+.padding-bottom{
+    padding-bottom: 1em;
+    border-bottom: 1px solid var(--gray);
+}
+
+.padding-top{
+    padding-top: 1em;
+}
+
+/* Numérotation automatique des h3 dans les sections du CV */
+.cv section h3::before {
+    counter-increment: section-h3;
+    content: counter(section-h3) ". ";
+}
+
+/* Initialiser le compteur au début du main */
+.cv {
+    counter-reset: section-h3;
+}
+
+/*Style de la page contact.html*/
+.contact-section{
+    margin: 2em auto;
+}
+
+.contact-section h2{
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 2em auto;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+label{
+    font-weight: bold;
+}
+
+input, textarea{
+    padding: 0.5em;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+textarea{
+    resize: none;
+    min-height: 100px;
+}
+
+input:focus, textarea:focus{
+    outline: none;
+    border-color: var(--orange);
+    box-shadow: 0 0 5px var(--orange);
+}
+
+button{
+    padding: 0.75em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover{
+    background-color: var(--yellow);
+}
+/*Fin du style contact.html*/
+
 /*media queries*/
 @media (min-width: 768px) {
     
@@ -301,6 +390,42 @@ a{
         font-style: italic;
     }
 
+    .contact-section{
+        width: 80%;
+        margin: 2em auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2em;
+    }
+
+    .contact-section > div > p {
+        display: none;
+    }
+
+    .contact-section h2{
+        font-size: 1.75em;
+        margin-top: 0;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2em;
+        margin: 0;
+    }
+
+    input, textarea{
+        width: 294px;
+}
+    button{
+        margin-top: 2em;
+        width: 294px;
+    }
+
 }
 
 @media screen and (min-width: 1200px) {
@@ -319,33 +444,12 @@ a{
     .a-propos p{
         font-size: 1.2em;
     }
-    
+
+    form{
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3em;
+    }
 }
 
-/*Style du fichier cv.html*/
 
-.cv h2{
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 1em;
-}
-
-.padding-bottom{
-    padding-bottom: 1em;
-    border-bottom: 1px solid var(--gray);
-}
-
-.padding-top{
-    padding-top: 1em;
-}
-
-/* Numérotation automatique des h3 dans les sections du CV */
-.cv section h3::before {
-    counter-increment: section-h3;
-    content: counter(section-h3) ". ";
-}
-
-/* Initialiser le compteur au début du main */
-.cv {
-    counter-reset: section-h3;
-}
