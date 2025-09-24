@@ -28,12 +28,17 @@ Le site est conçu pour s’adapter à tous les types d’écrans : mobile, tabl
 ---
 
 ## 🔗 Lien du site hébergé
-👉 [Mon Portfolio en ligne](https://ton-utilisateur.github.io/portfolio)
+👉 [Mon Portfolio en ligne sur Netlify](https://stupendous-swan-a7e9d3.netlify.app)
+
+---
+
+## 🔗 Lien du site hébergé
+👉 [Lien GitHub](https://github.com/Obeis-Ndombe/portfolio.git)
 
 ---
 
 ## 🎨 Maquette Figma
-👉 [Lien vers la maquette dupliquée](https://figma.com/ton-lien)
+👉 [Lien vers la maquette dupliquée](https://www.figma.com/design/oFGj1BGU9wY69psbdSmc61/maquette-Portfolio?t=pGRAeEEqGP3rtnkh-0)
 
 ---
 
@@ -45,9 +50,6 @@ Le site est conçu pour s’adapter à tous les types d’écrans : mobile, tabl
 - Personnalisation d’une maquette Figma
 
 ---
-
-## 📅 Deadline
-Projet à rendre le **21 septembre 2025** avant **23h59**.
 
 ---
 

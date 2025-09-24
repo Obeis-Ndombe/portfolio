@@ -129,8 +129,7 @@ a{
 }
 
 .a-propos h3{
-    text-align:center;
-    text-decoration: underline var(--black) 1px;
+    text-align: center;
     margin: 0;
 }
 
@@ -144,19 +143,6 @@ a{
     display: flex;
     justify-content: center;
     gap: 1em;
-
-    /* Style pour la classe project-details en affichage desktop */
-    .project-details {
-           display: flex;
-           flex-direction: row;
-           align-items: flex-start;
-           justify-content: space-between;
-           gap: 2em;
-    }
-    .project-details > div {
-        width: 50%;
-        box-sizing: border-box;
-    }
 }
 
 .buttons .btn{
@@ -314,11 +300,9 @@ button:hover{
 /*Style de la page projets.html*/
 
 .projects h2{
-    font-size: 1.25em;
-    text-transform: uppercase;
+    font-size: 2.5em;
     margin: 0 0 1.25em 0;
     font-weight: 700;
-    text-align: center;
 }
 
 .project-list{
