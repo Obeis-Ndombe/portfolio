@@ -301,7 +301,7 @@ button:hover{
 
 .projects h2{
     font-size: 2.5em;
-    margin: 0 0 1.25em 0;
+    margin: 0 0 0.5em 0;
     font-weight: 700;
 }
 
@@ -488,9 +488,10 @@ button:hover{
     /*style pour la page projets*/
 
     .projects h2{
-        font-size: 1.5em;
+        font-size: 2em;
         font-weight: 700;
         text-align: left;
+        margin-bottom: 1em;
     }
 
     .project-list h3{
@@ -556,10 +557,10 @@ button:hover{
     }
 
     .projects h2{
-        font-size: 1.75em;
+        font-size: 2.5em;
         font-weight: 700;
         text-align: left;
-        margin-bottom: 2em;
+        margin-bottom: 1.5em;
     }
 
     .project-details {
