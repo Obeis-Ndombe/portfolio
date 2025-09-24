@@ -107,6 +107,7 @@ a{
 .intro h2{
     margin: 0;
     font-size: 2.5em;
+    padding-top: 0.5em;
 }
 
 .intro-text{
@@ -143,6 +144,19 @@ a{
     display: flex;
     justify-content: center;
     gap: 1em;
+
+    /* Style pour la classe project-details en affichage desktop */
+    .project-details {
+           display: flex;
+           flex-direction: row;
+           align-items: flex-start;
+           justify-content: space-between;
+           gap: 2em;
+    }
+    .project-details > div {
+        width: 50%;
+        box-sizing: border-box;
+    }
 }
 
 .buttons .btn{
@@ -211,9 +225,9 @@ a{
 /*Style du fichier cv.html*/
 
 .cv h2{
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 1em;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
 }
 
 .padding-bottom{
@@ -226,7 +240,7 @@ a{
 }
 
 /* Numérotation automatique des h3 dans les sections du CV */
-.cv section h3::before {
+.cv h3::before {
     counter-increment: section-h3;
     content: counter(section-h3) ". ";
 }
@@ -295,7 +309,63 @@ button{
 button:hover{
     background-color: var(--yellow);
 }
-/*Fin du style contact.html*/
+
+
+/*Style de la page projets.html*/
+
+.projects h2{
+    font-size: 1.25em;
+    text-transform: uppercase;
+    margin: 0 0 1.25em 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+.project-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 2em;
+}
+
+.projects h3::before {
+    content: none;
+    counter-increment: none;
+}
+
+.project-list h3{
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    align-self: flex-start;
+}
+
+.project-item h3{
+    display: none;
+}
+
+.project-image {
+    width: 100%;
+    height: auto; /* ou une hauteur fixe si besoin */
+    border: 20px solid var(--gray);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.project-item p{
+    font-size: 0.875em;
+    font-weight: 400;
+}
+
 
 /*media queries*/
 @media (min-width: 768px) {
@@ -304,7 +374,6 @@ button:hover{
         flex-direction: row;
         padding: 1em 2em 0 2em;
         border-bottom: 0.5px solid var(--gray);
-        background-color: ;
     }
 
     .intro{
@@ -375,6 +444,12 @@ button:hover{
         padding: 2em 0;
     }
 
+    .cv h2{
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 2em;
+    }
+
     .job-header{
         display: flex;
         justify-content: space-between;
@@ -420,10 +495,48 @@ button:hover{
 
     input, textarea{
         width: 294px;
-}
+    }
+
     button{
         margin-top: 2em;
         width: 294px;
+    }
+    /*style pour la page projets*/
+
+    .projects h2{
+        font-size: 1.5em;
+        font-weight: 700;
+        text-align: left;
+    }
+
+    .project-list h3{
+        display: none;
+    }
+
+     .project-item h3{
+        display: block;
+        margin: 0 0 1em 0;
+    }
+    
+    .project-details {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 2em;
+    }
+    .project-details > div {
+        width: 50%;
+        box-sizing: border-box;
+    }
+
+    .project-image :hover {
+        border: 5px solid var(--orange);
+        transition: border 0.3s ease;
+    }
+
+    .project-item p{
+        margin: 0;
     }
 
 }
@@ -440,6 +553,7 @@ button:hover{
 
     .a-propos h3{
         font-size: 2.5em;
+        line-height: 1.2em;
     }
     .a-propos p{
         font-size: 1.2em;
@@ -449,6 +563,31 @@ button:hover{
         flex-direction: row;
         flex-wrap: wrap;
         gap: 3em;
+    }
+
+    .projects{
+        width: 80%;
+        margin: 0 auto;
+        padding: 2em 0;
+    }
+
+    .projects h2{
+        font-size: 1.75em;
+        font-weight: 700;
+        text-align: left;
+        margin-bottom: 2em;
+    }
+
+    .project-details {
+        gap: 4em;
+    }
+
+    .project-item h3{
+        font-size: 1.5em;
+    }
+
+    .project-item p{
+        font-size: 1.25em;
     }
 }
 
