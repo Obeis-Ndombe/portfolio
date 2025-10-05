@@ -1,16 +1,15 @@
-/* Importation de la police Inter depuis Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* Importation de la police Mona Sans depuis Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
-/* Début du style global */
+
+/* Déclaration des variables de couleurs et de police utilisées */
 :root{
     --white:#FFFFFF;
-    --black:#000000;
+    --black:#000000; /**/
     --yellow:#EEA302;
     --orange:#E13B25;
-    --green:#80D8DA;
+    --green:#67b8e3;
     --gray:#D9D9D9;
     --blue:#2070ab;
-    --font-inter: 'Inter', sans-serif;
     --font-Mona-Sans: "Mona Sans", Helvetica, sans-serif;
 }
 
@@ -27,11 +26,6 @@ body {
 }
 
 /* Styles globales... */
-
-h1, h2, h3{
-    font-family:"Mona Sans", Helvetica, sans-serif;
-}
-
 a{
     text-decoration: none;
     color: var(--dark);
@@ -41,15 +35,13 @@ a{
     list-style: none;
 }
 
-.bold{
-    font-weight: bold;
-}
-/* Fin du style global */
-
-
 /* Début de header*/
 #main-header{
     background-color: var(--blue);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar{
@@ -57,14 +49,26 @@ a{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 1em;
+    gap: 2em;
     color: var(--white);
     padding: 1.5em 0;
 }
 
-.navbar h1{
-    font-size: 1.5em;
-    margin-top: 0;
+.logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2em;
+    font-weight: bold;
+    font-size: 0.875em;
+    letter-spacing: 2px;
+}
+
+.logo-image{
+    width: 50px;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .nav-list{
@@ -74,7 +78,6 @@ a{
     padding: 0;
     margin: 0;
 }
-
 
 .nav-item::after{
     content: "|";
@@ -87,12 +90,10 @@ a{
 }
 
 .nav-item a:hover{
-    text-decoration: underline var(--black) 2px;
-    color: var(--orange);
+    text-decoration: underline var(--white) 1px;
     transition: all 0.5s ease;
 
 }
-/*Fin de header*/
 
 
 /*Début de main*/
@@ -109,12 +110,11 @@ a{
 }
 
 .intro img{
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    border-radius: 50%;
+    border: none;
     object-fit: cover;
     overflow: hidden;
-    margin: auto 0;
-    border: 20px solid var(--gray);
 }
 
 .intro-text{
@@ -128,9 +128,11 @@ a{
     border-top: 1px solid var(--gray);
 }
 
-.intro-text h2{
+.intro-text h1{
     margin: 0;
     font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
     padding-top: 0.5em;
 }
 
@@ -141,13 +143,14 @@ a{
     padding-top: O;
 }
 
-.a-propos h3{
+.a-propos h2{
     text-align: center;
     margin: 0;
 }
 
 .a-propos p{
     text-align: justify;
+    font-size: 1em;
     line-height: 1.5em;
     margin: 0;
 }
@@ -155,38 +158,42 @@ a{
 .buttons{
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1em;
 }
 
 .buttons .btn{
-    padding: 1em 0;
-    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: bold;
     text-align: center;
-    width: 90px;
+    color: var(--black);
 }
 
 .buttons .btn-jaune{
     background-color: var(--yellow);
-    color: var(--white);
+    
 }
 
 .buttons .btn-rouge{
     background-color: var(--orange);
-    color: var(--white);
 }
 
 .buttons .btn-bleu{
     background-color: var(--green);
-    color: var(--white);
 }
 
 .buttons .btn:hover{
     opacity: 0.8;
     transform: scale(1.05);
 }
-/*Fin de main*/
 
 /*Début de footer*/
 #main-footer{
@@ -199,10 +206,16 @@ a{
     padding: 4em 0 1em 0;
     border-top: 1px solid var(--gray);
     text-align: center;
-    background-color: var(--blue);
-    color: var(--white);
+    color: var(--black);
 }
 
+#main-footer p{
+    font-size: 0.875em;
+}
+
+.phone > p:first-child, .email > p:first-child, .socials > p:first-child{
+    font-weight: bold;
+}
 
 .social-icons{
     display: flex;
@@ -210,11 +223,10 @@ a{
     align-items: center;
     gap: 1em;
 }
+
 .social-icons a img{
     transition: transform 0.3s ease;
-    background-color: var(--white);
     padding: 4px;
-    border-radius: 25%;
 }
 
 .social-icons a img:hover{
@@ -222,13 +234,13 @@ a{
     background-color: var(--green);
 }
 
-.copyright {
-    font-size: 0.8em;
+#copyright {
+    font-size: 0.75em;
+    text-align: center;
+    margin-top: 3em;
 }
-/*Fin de footer*/
 
 /*Style du fichier cv.html*/
-
 .cv h2{
     font-size: 1.5em;
     text-transform: uppercase;
@@ -300,19 +312,23 @@ input:focus, textarea:focus{
     box-shadow: 0 0 5px var(--orange);
 }
 
+.submit-button{
+    margin-top: 2em;
+}
+
 button{
-    padding: 0.75em;
+    background-color: var(--yellow);
+    color: var(--white);
     border: none;
     border-radius: 5px;
-    background-color: var(--orange);
-    color: var(--white);
+    padding: 0.75em 1.5em;
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 button:hover{
-    background-color: var(--yellow);
+    background-color:var(--orange);
 }
 
 
@@ -372,16 +388,26 @@ button:hover{
 
 /*media queries*/
 @media (min-width: 768px) {
-    
+
     .navbar{
         flex-direction: row;
         align-items: center;
-        padding: 1em 2em;
+        padding: 1em 4em;
         border-bottom: 0.5px solid var(--gray);
     }
 
-    .navbar h1 {
-        margin: auto 0;
+    .nav-item{
+        font-size: 1em;
+    }
+
+    .nav-item::after{
+        padding: 0 1em;
+    }
+
+    .logo{
+        flex-direction: row;
+        gap: 0.5em;
+        font-size: 1em;
     }
 
     .intro{
@@ -389,13 +415,12 @@ button:hover{
         justify-content: space-between;
         align-items: center;
         gap: 1.5em;
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
     }
 
     .intro img{
-        width: 380px;
-        height: 380px;
+        width: 420px;
         border-radius: 50%;
         border: none;
     }
@@ -403,10 +428,10 @@ button:hover{
     .intro-text{
         align-items:flex-start;
         border-top: none;
-        gap: 1.5em;
+        gap: 1em;
     }
 
-    .intro-text h2{      
+    .intro-text h1{      
         text-align: left;
         font-size: 3em;
         padding-top: 0;
@@ -415,13 +440,15 @@ button:hover{
     .underline{
         text-decoration: none;
     }
+
     .a-propos{
         padding: 0;
     }
-    .a-propos h3{
+
+    .a-propos h2{
         text-align: left;
         padding-bottom: 0.5em;
-        font-size: 2em;
+        font-size: 2em;        
         text-decoration: none;
     }
 
@@ -429,20 +456,17 @@ button:hover{
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-        padding: 2em 2em;
-        margin-top: 4em;
+        margin: 0 4em;
+        padding: 2em 0;
         gap: 1em;
         border-top: 1px solid var(--gray);
     }
 
     #main-footer p{
         text-align: left;
+        font-size: 1em;
     }
 
-    .copyright{
-        text-align: right;
-        font-size: 0.8em;
-    }
 
     /*style pour la page Cv*/
     .cv{
@@ -473,7 +497,7 @@ button:hover{
     }
 
     .contact-section{
-        width: 80%;
+        width: 90%;
         margin: 2em auto;
         display: flex;
         flex-direction: row;
@@ -491,6 +515,12 @@ button:hover{
         margin-top: 0;
     }
 
+    .contact-info{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
     form{
         display: flex;
         flex-direction: column;
@@ -504,12 +534,7 @@ button:hover{
         width: 294px;
     }
 
-    button{
-        margin-top: 2em;
-        width: 294px;
-    }
     /*style pour la page projets*/
-
     .projects h2{
         font-size: 2em;
         font-weight: 700;
@@ -538,8 +563,8 @@ button:hover{
         box-sizing: border-box;
     }
 
-    .project-image :hover {
-        border: 5px solid var(--orange);
+    .project-image a :hover {
+        border: 4px solid var(--orange);
         transition: border 0.3s ease;
     }
 
@@ -550,16 +575,20 @@ button:hover{
 }
 
 @media screen and (min-width: 1200px) {
+    .intro{
+        width: 70%;
+        gap: 2em;
+    }
+    
     .intro img{
         width: 500px;
-        height: 400px;
     }
 
-    .intro-text h2{
+    .intro-text h1{
         font-size: 4em;
     }
 
-    .a-propos h3{
+    .a-propos h2{
         font-size: 2.5em;
         line-height: 1.2em;
     }
@@ -569,8 +598,13 @@ button:hover{
 
     form{
         flex-direction: row;
-        flex-wrap: wrap;
         gap: 3em;
+    }
+
+    button {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
     }
 
     .projects{
@@ -599,4 +633,6 @@ button:hover{
     }
 }
 
+
+/* twitter, projets, */
 
