@@ -11,6 +11,7 @@ Le site est entièrement développé en **HTML** et **CSS**, avec une attention 
 - HTML5
 - CSS3
 - Git & GitHub
+- Figma
 
 ---
 
@@ -27,18 +28,18 @@ Le site est conçu pour s’adapter à tous les types d’écrans : mobile, tabl
 
 ---
 
-## 🔗 Lien du site hébergé
-👉 [Mon Portfolio en ligne sur Netlify](https://stupendous-swan-a7e9d3.netlify.app)
+## 🔗 Lien du site hébergé sur Netlify](https://stupendous-swan-a7e9d3.netlify.app)
 
 ---
 
 ## 🔗 Lien du site hébergé
-👉 [Lien GitHub](https://github.com/Obeis-Ndombe/portfolio.git)
+👉 [Lien GitHub](https://github.com/kadea-academy-learners/projet-portfolio-Obeis-Ndombe.git)
 
+👉 [Mon Portfolio en ligne
 ---
 
 ## 🎨 Maquette Figma
-👉 [Lien vers la maquette dupliquée](https://www.figma.com/design/oFGj1BGU9wY69psbdSmc61/maquette-Portfolio?t=pGRAeEEqGP3rtnkh-0)
+👉 [Lien vers la maquette dupliquée](https://www.figma.com/design/cbGZrlrqUL4V2elyXn0nrL/maquette-Portfolio?node-id=0-1&p=f&t=9162DEvaMYpywSST-0)
 
 ---
 
